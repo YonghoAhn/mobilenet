@@ -1,3 +1,4 @@
+import os
 import cv2
 import websockets
 import asyncio
@@ -10,7 +11,7 @@ from hailo_platform import (HEF, VDevice, HailoStreamInterface, InferVStreams, C
     InputVStreamParams, OutputVStreamParams, FormatType)
 
 # --- 설정 ---
-SERVER_URI = "ws://192.168.0.2:3000"  # 접속할 서버 주소
+SERVER_URI = os.environ.get("CCTV_WS_URI", "ws://127.0.0.1:3000")  # override for the target dashboard
 VIDEO_PATH = "demo.mp4"             # 재생할 영상 파일 경로
 TARGET_FPS = 30                      # 초당 전송할 프레임 수
 FALL_MODEL_PATH = './mobilenet.hef'  # 낙상 감지 모델 경로
