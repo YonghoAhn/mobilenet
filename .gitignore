@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Runtime / compiler logs
+*.log
+
+# Local media and datasets
+*.mp4
+*.avi
+*.mov
+*.mkv
+data/
+dataset/
+datasets/
+
+# Local environment
+.env
+.env.*
